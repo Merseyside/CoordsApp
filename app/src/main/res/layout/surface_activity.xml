@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.merseyside.admin.coordsapp.Coords.MySurfaceView
+        android:id="@+id/surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="@dimen/button_layout_margin_top"
+        android:layout_marginRight="@dimen/button_layout_margin"
+        android:layout_marginEnd="@dimen/button_layout_margin">
+
+        <ImageButton
+            android:id="@+id/plus_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:maxHeight="@dimen/imagebutton_size"
+            android:maxWidth="@dimen/imagebutton_size"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:src="@drawable/plus"/>
+
+        <ImageButton
+            android:id="@+id/minus_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:maxHeight="@dimen/imagebutton_size"
+            android:maxWidth="@dimen/imagebutton_size"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:src="@drawable/minus"/>
+
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CoordsApp</string>
+    <string name="choose_point_count">Выберите количество точек</string>
+    <string name="lets_go">Поехали</string>
+    <string name="wrong_parameters">Неверные параметры запроса</string>
+    <string name="no_internet">Нет интернет соединения</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
+</resources>
