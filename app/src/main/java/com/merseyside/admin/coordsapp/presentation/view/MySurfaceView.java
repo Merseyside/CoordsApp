@@ -1,4 +1,4 @@
-package com.merseyside.admin.coordsapp.Coords;
+package com.merseyside.admin.coordsapp.presentation.view;
 
 import android.content.Context;
 import android.util.Log;
@@ -8,6 +8,7 @@ import android.view.SurfaceView;
 import android.view.View;
 
 import com.merseyside.admin.coordsapp.Constants;
+import com.merseyside.admin.coordsapp.DrawThread;
 import com.merseyside.admin.coordsapp.Point;
 
 import java.util.ArrayList;

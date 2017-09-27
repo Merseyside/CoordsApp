@@ -1,4 +1,4 @@
-package com.merseyside.admin.coordsapp;
+package com.merseyside.admin.coordsapp.presentation.di;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,10 +9,10 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-class AppModule {
+public class AppModule {
 
     private Context context;
-    AppModule(@NonNull Context context){
+    public AppModule(@NonNull Context context){
         this.context = context;
     }
 

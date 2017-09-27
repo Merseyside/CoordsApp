@@ -1,4 +1,4 @@
-package com.merseyside.admin.coordsapp.Main;
+package com.merseyside.admin.coordsapp.presentation.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.merseyside.admin.coordsapp.Constants;
-import com.merseyside.admin.coordsapp.Coords.SurfaceActivity;
 import com.merseyside.admin.coordsapp.Point;
 import com.merseyside.admin.coordsapp.R;
+import com.merseyside.admin.coordsapp.presentation.presenter.MainPresenterImpl;
 
 import java.util.ArrayList;
 
@@ -38,7 +38,11 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.go_button):
-                presenter.goButtonClicked(Integer.valueOf(count_et.getText().toString()));
+                try {
+                    presenter.goButtonClicked(Integer.valueOf(count_et.getText().toString()));
+                } catch (NumberFormatException e) {
+                    errorMessage(getString(R.string.wrong_parameters));
+                }
                 break;
         }
     }

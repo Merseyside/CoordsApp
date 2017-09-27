@@ -1,5 +1,8 @@
-package com.merseyside.admin.coordsapp.Main;
+package com.merseyside.admin.coordsapp.presentation.presenter;
 
+import com.merseyside.admin.coordsapp.domain.interactor.CoordsInteractor;
+import com.merseyside.admin.coordsapp.domain.interactor.CoordsInteractorImpl;
+import com.merseyside.admin.coordsapp.presentation.view.MainView;
 import com.merseyside.admin.coordsapp.Point;
 
 import java.util.ArrayList;
@@ -13,7 +16,7 @@ public class MainPresenterImpl implements CoordsInteractor, CoordsInteractor.OnF
     private MainView mainView;
     private CoordsInteractor coordsInteractor;
 
-    MainPresenterImpl(MainView mainView) {
+    public MainPresenterImpl(MainView mainView) {
         this.mainView = mainView;
         coordsInteractor = new CoordsInteractorImpl(this);
     }

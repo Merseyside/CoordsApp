@@ -1,4 +1,4 @@
-package com.merseyside.admin.coordsapp.Coords;
+package com.merseyside.admin.coordsapp.presentation.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +24,8 @@ public class SurfaceActivity extends AppCompatActivity  {
     private MySurfaceView MSV;
     public ImageButton plus, minus;
     private ArrayList<Point> points;
+
+    @SuppressWarnings("unchecked")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,9 +34,8 @@ public class SurfaceActivity extends AppCompatActivity  {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         Intent intent = getIntent();
-        points = (ArrayList<Point>) intent.getSerializableExtra(Constants.POINTS_KEY);
 
-        Log.d("kek", "tut");
+        points = (ArrayList<Point>) intent.getSerializableExtra(Constants.POINTS_KEY);
 
         MSV = new MySurfaceView(this, points);
 
@@ -53,7 +54,7 @@ public class SurfaceActivity extends AppCompatActivity  {
         plus.setMaxWidth(MyUtils.dpsInPixels(this, R.dimen.imagebutton_size));
         plus.setAdjustViewBounds(true);
         plus.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        plus.setBackgroundDrawable(null);
+        plus.setBackground(null);
         plus.setOnClickListener(view -> MSV.zoomOn());
 
         minus = new ImageButton(this);
@@ -63,7 +64,7 @@ public class SurfaceActivity extends AppCompatActivity  {
         minus.setMaxWidth(MyUtils.dpsInPixels(this, R.dimen.imagebutton_size));
         minus.setAdjustViewBounds(true);
         minus.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        minus.setBackgroundDrawable(null);
+        minus.setBackground(null);
         minus.setOnClickListener(view -> MSV.zoomOut());
 
         buttonsWidget.addView(plus, linearParams);

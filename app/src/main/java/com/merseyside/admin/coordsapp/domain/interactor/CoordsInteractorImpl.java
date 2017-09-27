@@ -1,4 +1,4 @@
-package com.merseyside.admin.coordsapp.Main;
+package com.merseyside.admin.coordsapp.domain.interactor;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -32,7 +32,6 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.concurrent.ExecutionException;
 
 import javax.inject.Inject;
 import javax.net.ssl.HttpsURLConnection;
@@ -47,7 +46,7 @@ public class CoordsInteractorImpl implements CoordsInteractor {
     @Inject Context context;
     private OnFinishedResult listener;
 
-    CoordsInteractorImpl(OnFinishedResult listener) {
+    public CoordsInteractorImpl(OnFinishedResult listener) {
         Application.getComponent().inject(this);
         this.listener = listener;
     }
@@ -56,11 +55,7 @@ public class CoordsInteractorImpl implements CoordsInteractor {
     public void getCoords(int count) {
         if (isOnline()) {
             NetworkAsyncTask asyncTask = new NetworkAsyncTask(Constants.URL, count);
-            try {
-                asyncTask.execute().get();
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
+            asyncTask.execute();
         }
         else listener.onError(context.getResources().getString(R.string.no_internet));
     }
@@ -139,7 +134,8 @@ public class CoordsInteractorImpl implements CoordsInteractor {
         return null;
     }
 
-    public void getPointsFromJSON(JSONObject json) {
+    @SuppressWarnings("unchecked")
+    private void getPointsFromJSON(JSONObject json) {
         assert json != null;
         try {
             int result = json.getInt("result");

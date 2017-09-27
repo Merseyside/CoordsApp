@@ -7,6 +7,10 @@ import android.graphics.Point;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.merseyside.admin.coordsapp.presentation.di.AppComponent;
+import com.merseyside.admin.coordsapp.presentation.di.AppModule;
+import com.merseyside.admin.coordsapp.presentation.di.DaggerAppComponent;
+
 public class Application extends android.app.Application {
     private static AppComponent component;
     public static AppComponent getComponent(){

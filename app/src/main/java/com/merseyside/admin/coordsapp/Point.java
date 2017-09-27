@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 public class Point implements Serializable, Comparable {
     private float x,y;
+    private final long serialVersionUID = 0;
     public Point(float x, float y) {
         this.x = x;
         this.y = y;

@@ -1,4 +1,4 @@
-package com.merseyside.admin.coordsapp.Main;
+package com.merseyside.admin.coordsapp.presentation.view;
 
 import com.merseyside.admin.coordsapp.Point;
 

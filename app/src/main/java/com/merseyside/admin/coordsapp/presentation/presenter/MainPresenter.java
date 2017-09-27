@@ -1,4 +1,4 @@
-package com.merseyside.admin.coordsapp.Main;
+package com.merseyside.admin.coordsapp.presentation.presenter;
 
 /**
  * Created by ivan_ on 22.08.2017.

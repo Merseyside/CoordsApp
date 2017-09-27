@@ -1,15 +1,11 @@
-package com.merseyside.admin.coordsapp.Coords;
+package com.merseyside.admin.coordsapp;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
+import android.support.v4.content.ContextCompat;
 import android.view.SurfaceHolder;
-
-import com.merseyside.admin.coordsapp.Application;
-import com.merseyside.admin.coordsapp.Point;
-import com.merseyside.admin.coordsapp.R;
 
 import java.util.ArrayList;
 
@@ -33,7 +29,7 @@ public class DrawThread extends Thread {
     private float scale;
     private int center_x, center_y;
 
-    DrawThread(SurfaceHolder holder, ArrayList<Point> points, float scale) {
+    public DrawThread(SurfaceHolder holder, ArrayList<Point> points, float scale) {
         Application.getComponent().inject(this);
         this.holder = holder;
         this.points = points;
@@ -59,7 +55,7 @@ public class DrawThread extends Thread {
 
     private void drawAxes() {
         Paint paint = new Paint();
-        paint.setColor(context.getResources().getColor(R.color.black));
+        paint.setColor(ContextCompat.getColor(context, R.color.black));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(DEFAULT_AXE_SIZE * scale);
         canvas.drawLine(width/2, 0, width/2, height, paint);
@@ -69,7 +65,7 @@ public class DrawThread extends Thread {
     private ArrayList<Point> drawPoints() {
         ArrayList<Point> coords = new ArrayList<>();
         Paint paint = new Paint();
-        paint.setColor(context.getResources().getColor(R.color.point_color));
+        paint.setColor(ContextCompat.getColor(context, R.color.point_color));
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         paint.setStrokeWidth(DEFAULT_STROKE_SIZE);
 
@@ -84,7 +80,7 @@ public class DrawThread extends Thread {
 
     private void drawLines(ArrayList<Point> coords) {
         Paint paint = new Paint();
-        paint.setColor(context.getResources().getColor(R.color.line_color));
+        paint.setColor(ContextCompat.getColor(context, R.color.line_color));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(DEFAULT_LINE_SIZE * scale);
         for (int i = 0; i<coords.size()-1; i++)

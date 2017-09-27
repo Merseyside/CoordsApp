@@ -1,7 +1,7 @@
-package com.merseyside.admin.coordsapp;
+package com.merseyside.admin.coordsapp.presentation.di;
 
-import com.merseyside.admin.coordsapp.Coords.DrawThread;
-import com.merseyside.admin.coordsapp.Main.CoordsInteractorImpl;
+import com.merseyside.admin.coordsapp.DrawThread;
+import com.merseyside.admin.coordsapp.domain.interactor.CoordsInteractorImpl;
 
 import javax.inject.Singleton;
 
